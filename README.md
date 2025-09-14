@@ -1,32 +1,56 @@
-🚕🟩 InDrive — Контроль качества
+\documentclass[12pt,a4paper]{article}
 
-Мини-гайд, чтобы всё взлетело за 1 минуту ⚡️
+% --- Unicode + RU + Emoji-friendly fonts ---
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setdefaultlanguage{russian}
+\setmainfont{Noto Sans}
+\setsansfont{Noto Sans}
+\setmonofont{JetBrains Mono}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily\small,breaklines=true,columns=fullflexible}
+\usepackage[margin=1in]{geometry}
 
-1) 🧰 Установка
+\begin{document}
+
+\begin{center}
+{\LARGE 🚕🟩 InDrive --- \textbf{Контроль качества}}\\[4pt]
+{\large Мини-гайд, чтобы всё взлетело за 1 минуту ⚡️}
+\end{center}
+
+\vspace{0.8em}
+
+\section*{1) 🧰 Установка}
+\begin{lstlisting}
 cd Indrive
 python -m venv .venv
-source .venv/bin/activate     # Win: .\.venv\Scripts\Activate.ps1
+# macOS/Linux:
+source .venv/bin/activate
+# Windows (PowerShell):
+.\.venv\Scripts\Activate.ps1
+
 pip install -U pip
 pip install -r requirements.txt
+\end{lstlisting}
 
-2) ⬇️ Веса с Google Drive
-
-Сохраняем прямо в корень, под ваши имена файлов.
-
+\section*{2) ⬇️ Веса с Google Drive}
+Сохраняем прямо в корень репозитория под ваши имена файлов (или пропустите, если уже лежат).
+\begin{lstlisting}
 pip install gdown
 gdown --fuzzy "https://drive.google.com/uc?id=<DAMAGE_ID>" -O trained.pt
 gdown --fuzzy "https://drive.google.com/uc?id=<DIRTY_ID>"  -O vgg16_dirty_clean_best.pth
+\end{lstlisting}
 
-
-(если уже лежат — этот шаг пропускаем ✅)
-
-3) ▶️ Запуск
+\section*{3) ▶️ Запуск}
+\begin{lstlisting}
 streamlit run my_models.py
+\end{lstlisting}
+Откроется \texttt{http://localhost:8501} 🔗
 
-
-Откроется http://localhost:8501 🔗
-
-📁 Что где лежит
+\section*{📁 Что где лежит}
+\begin{lstlisting}
 Indrive/
 ├─ my_models.py   # вход для Streamlit
 ├─ damage.py      # YOLO (повреждения)
@@ -34,15 +58,15 @@ Indrive/
 ├─ trained.pt     # веса YOLO
 ├─ vgg16_dirty_clean_best.pth  # веса VGG
 └─ sample_images_for_tests/    # тестовые картинки
+\end{lstlisting}
 
-💡 Подсказки
+\section*{💡 Подсказки}
+\begin{itemize}[leftmargin=1.2em]
+  \item ❗ Если видите ошибки CUDA/cuDNN --- используйте CPU-сборку PyTorch или поставьте колёса под вашу версию CUDA.
+  \item 🧩 Хотите хранить веса вне корня? Укажите пути переменными окружения:
+\end{itemize}
 
-Ошибка CUDA/cuDNN? Поставьте CPU-сборку PyTorch или подходящую под вашу CUDA.
-
-Хотите хранить веса отдельно?
-
+\begin{lstlisting}
+# Linux/macOS:
 export DAMAGE_WEIGHTS=models/yolo/damage_yolo.pt
-export DIRTY_WEIGHTS=models/vgg/dirty_vgg.pth
-
-
-Ура, готово! 🚀
+export DIRTY_WEIGHTS=models/vgg/dirty_vgg.pt
