@@ -1,0 +1,116 @@
+# ===========================
+# MODEL WEIGHTS / CHECKPOINTS
+# ===========================
+# PyTorch
+*.pt
+*.pth
+*.ptl
+*.jit
+*.ckpt
+optimizer.pt
+rng_state.pth
+
+# TensorFlow / Keras
+*.h5
+*.hdf5
+*.keras
+checkpoint
+ckpt-*
+
+# Hugging Face-style artifacts
+pytorch_model*.bin
+model*.bin
+adapter_model*.bin
+model*.safetensors
+*.safetensors
+flax_model*.msgpack
+rust_model.ot
+training_args.bin
+checkpoint-*/
+
+# ONNX / TFLite / CoreML / TensorRT / others
+*.onnx
+*.tflite
+*.mlmodel
+*.trt
+*.engine
+*.plan
+*.uff
+
+# Darknet / Caffe / Paddle / NCNN / MNN / TorchServe
+*.weights
+*.caffemodel
+*.pdparams
+*.pdmodel
+*.nb
+*.param      # NCNN graph (often paired with .bin)
+*.mnn
+*.mar
+
+# MXNet / TVM / OpenVINO / XGBoost, etc.
+*.params
+*.so
+*.xml
+*.bin  # OpenVINO often emits model.bin next to model.xml
+
+# As requested (custom/unknown extensions sometimes used for weights)
+*.hfa
+
+# Common artifact directories
+models/
+model/
+weights/
+checkpoints/
+artifacts/
+outputs/
+export/
+runs/
+logs/
+lightning_logs/
+wandb/
+mlruns/
+
+# ===============
+# DATA & CACHES
+# ===============
+data/
+datasets/
+.cache/
+.cache/*
+.huggingface/
+huggingface/
+transformers_cache/
+torch_cache/
+tf_cache/
+
+# ==================
+# GENERAL PYTHON ETC
+# ==================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+.venv/
+venv/
+.env.*
+*.egg-info/
+dist/
+build/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_markdown
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Keep empty dirs if needed (add a .gitkeep file inside them)
+# !*/.gitkeep
+
+# dataset archives
+car_seg_training_code/carparts-seg.zip
+car_seg_training_code/*.zip
