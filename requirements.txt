@@ -1,0 +1,15 @@
+# App/UI
+streamlit>=1.33
+pillow>=10.0
+
+# Arrays & image prep
+numpy>=1.24
+
+# Models
+ultralytics>=8.2
+torch>=2.1
+torchvision>=0.16
+
+# Useful (often needed by Ultralytics/vision)
+opencv-python>=4.8
+matplotlib>=3.8
