@@ -36,6 +36,7 @@ Indrive/
 ├─ trained.pt - добавить веса
 ├─ vgg16_dirty_clean_best.pth - добавить веса
 ├─ /hdd/home/ABaglanova/indrive_hack/Indrive/car_seg_training_code - код тренировки модели сегментации
+├─ car_clean - код тренировки чистоты машины, датасет в гугл драйве
 ├─ failed_apps - демки которые работают, но не прошли в прод
 └─ sample_images_for_tests/ - для проверки моделей 
 ```
