@@ -14,10 +14,19 @@ pip install -r requirements.txt
 ```bash
 https://drive.google.com/drive/folders/1XAqvNpCRRqtgSnXA6tNFSes8bUZ4Hfad
 ```
-## 3) ▶️ Запуск
+## 3) ▶️ Запуск Demo 
 ```bash
 streamlit run my_models.py
 ```
+
+## 4) ▶️ Запуск Demo with Open AI KEY 
+Добавьте API в 19 строчку
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
+
+```bash
+streamlit run demo_with_openai_key.py
+```
+
 ## 📁 Структура
 ```bash
 Indrive/
@@ -28,3 +37,4 @@ Indrive/
 ├─ vgg16_dirty_clean_best.pth
 └─ sample_images_for_tests/
 ```
+
