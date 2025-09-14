@@ -10,12 +10,13 @@ source .venv/bin/activate     # Win: .\.venv\Scripts\Activate.ps1
 pip install -U pip
 pip install -r requirements.txt
 
-pip install gdown
-gdown --fuzzy "https://drive.google.com/uc?id=<DAMAGE_ID>" -O trained.pt
-gdown --fuzzy "https://drive.google.com/uc?id=<DIRTY_ID>"  -O vgg16_dirty_clean_best.pth
+2) ⬇️ Веса (Google Drive)
+https://drive.google.com/drive/folders/1XAqvNpCRRqtgSnXA6tNFSes8bUZ4Hfad
 
+3) ▶️ Запуск
 streamlit run my_models.py
 
+📁 Структура
 Indrive/
 ├─ my_models.py
 ├─ damage.py
